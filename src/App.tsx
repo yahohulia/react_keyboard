@@ -3,7 +3,7 @@ import React from 'react';
 interface State {
   pressedKey: string;
 }
-export class App extends React.Component<State> {
+export class App extends React.Component<{}, State> {
   state: Readonly<State> = {
     pressedKey: '',
   };
@@ -26,7 +26,8 @@ export class App extends React.Component<State> {
         <p className="App__message">
           {this.state.pressedKey
             ? `The last pressed key is [${this.state.pressedKey}]`
-            : 'Nothing was pressed yet'}
+            : 'Nothing was pressed yet'
+          }
         </p>
       </div>
     );
